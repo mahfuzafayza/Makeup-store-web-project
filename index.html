@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Armore Haul</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Armore Haul</h1>
+    <div class="cart">
+      🛒 Cart: <span id="cart-count">0</span>
+    </div>
+  </header>
+
+  <main class="product-container">
+    <div class="product">
+      <img src="https://www.revolutionbeauty.com/dw/image/v2/BCZJ_PRD/on/demandware.static/-/Sites-revbe-master-catalog/default/dw8df5cbb4/images/hi-res/1177061_Revolution%20Satin%20Kiss%20Lipstick%202.jpg" alt="Lipstick" />
+      <h2> Lipstick</h2>
+      <p>$10.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://imgmediagumlet.lbb.in/media/2024/03/65eaa62f6cd1eb33abd8e63f_1709876783814.jpg" alt="Foundation" />
+      <h2>Foundation</h2>
+      <p>$43.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://luvit.com.bd/wp-content/uploads/2022/11/32000145-003_10.jpg" alt="Mascara" />
+      <h2>Mascara</h2>
+      <p>$12.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="data:image/jpeg;base64,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" alt="Concealer" />
+      <h2> Concealer</h2>
+      <p>$31.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://ae.pixibeauty.com/cdn/shop/files/Pixi_Colour_OnTheGlow_Combined_Oct_2024_02.jpg?v=1729193204&width=1200" alt="Blush" />
+      <h2>Blush</h2>
+      <p>$25.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://www.makeupforever.ae/dw/image/v2/BDCL_PRD/on/demandware.static/-/Sites-mufe-master-catalog/default/dw8f31e52a/hi-res/PDPRevamp/shades.jpg?sw=550&sh=550&sfrm=png&bgcolor=ffffff" alt="Primer" />
+      <h2>Primer</h2>
+      <p>$22.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://static.independent.co.uk/2024/02/27/11/Setting-spray-hero.png?width=1200&height=1200&fit=crop" alt="Setting spray" />
+      <h2>Setting spray</h2>
+      <p>$13.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.squarespace-cdn.com/content/v1/55432595e4b05903a7a1130b/1702968705042-SEENYIQKOBIYBD1XVE3G/Lip+Gloss+2.jpg?format=750w" alt="Lipgloss" />
+      <h2>Lipgloss</h2>
+      <p>$19.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://www.maybelline.com/-/media/project/loreal/brand-sites/mny/americas/us/eye-makeup/eye-shadow/listing-pages/palette/modules/product_laydown_nudes_of_new_york_6_dmi_image_na_no-ctav2.jpg?rev=1a5eb8509b074b91a0aba2ee9078177a" alt="Eyeshadow" />
+      <h2>Eyeshadow</h2>
+      <p>$50.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRONvpx5I5FEiwDMxEOSutjRG9PSubaBGZbbKfgJ1HThmtYJTwVrOsVrKasVacvx0XjyVM&usqp=CAU" alt="Highliter" />
+      <h2>Highliter</h2>
+      <p>$31.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://img.drz.lazcdn.com/g/kf/S81c2da02900a48c1b99b149682b02f99T.png_960x960q80.png_.webp" alt="Brush set" />
+      <h2>Brush set</h2>
+      <p>$58.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://discoverpilgrim.com/cdn/shop/files/PureIvory6.jpg?v=1704781034&width=1080" alt="Compact powder" />
+      <h2>Compact powder</h2>
+      <p>$20.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://www.lauramercier.ca/cdn/shop/products/laura_mercier_Translucent_Loose_Setting_Powder_-_Light_Catcher_Celestial_Light_12724142-2.png?v=1668788742" alt="Loose powder" />
+      <h2>Loose powder</h2>
+      <p>$29.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://images.hyperspeed.me/https://www.glutone.in/cdn/shop/files/Glutone-Face-Wash-Glutone-87117849.png?v=1723402245" alt="Facewash" />
+      <h2>Facewash</h2>
+      <p>$43.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://hips.hearstapps.com/hmg-prod/images/gh-0609921-toners-for-sensitive-skin-1623340093.png?crop=0.502xw:1.00xh;0.250xw,0&resize=640:*" alt="Toner" />
+      <h2>Toner</h2>
+      <p>$12.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+    <img src="https://m.media-amazon.com/images/I/61fppr6y+xL._AC_UF1000,1000_QL80_.jpg" alt="Serum"/>
+    <h2>Serum</h2>
+      <p>$31.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+      <img src="https://www.dotandkey.com/cdn/shop/files/1_d773f2bc-55a7-4d0d-b762-16bfea470782.jpg?v=1744370149" alt="Moisturizer" />
+      <h2>Moisturizer</h2>
+      <p>$43.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://media6.ppl-media.com//tr:h-235,w-235,c-at_max,dpr-2,q-40/static/img/product/372527/dot-and-key-vitamin-c-e-super-bright-sunscreen-spf-50-for-even-toned-and-glowing-skin-no-white-cast-waterlight-i-uva-b-and-blue-light-protection-i-better-vitamin-d-absorption-80gm_01_display_1742468446_9005610e.jpg" alt="Sunscreen" />
+      <h2>Sunscreen</h2>
+      <p>$12.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBtYG8wikr3kmuq23rcJtyVBXKWigwqc4mFw&s" alt="Lipmbalm"/>
+    <h2>Lipbalm</h2>
+      <p>$31.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQObQoFJn_jbTPr0vTZRKDX7ECykvFcP6EvGA&s" alt="Facemask"/>
+    <h2>Facemask</h2>
+      <p>$31.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+    <div class="product">
+    <img src="https://swissbeauty.in/cdn/shop/files/EyeMaskAloeVera_07._720x.jpg?v=1747079047" alt="Eye mask"/>
+    <h2>Eye mask</h2>
+      <p>$31.00</p>
+      <button onclick="addToCart()">Add to Cart</button>
+    </div>
+  </main>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
